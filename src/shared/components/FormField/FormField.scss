@@ -1,0 +1,28 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+  }
+
+  &__error {
+    margin: 0;
+    font-size: 13px;
+    color: #b91c1c;
+  }
+
+  &--error {
+    .input {
+      border-color: #ef4444;
+
+      &:focus {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+      }
+    }
+  }
+}

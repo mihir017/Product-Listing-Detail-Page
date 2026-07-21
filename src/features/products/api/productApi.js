@@ -1,15 +1,18 @@
 import api from '@/api/axios';
-import { ENDPOINTS } from '@/api/endpoints';
+import { ENDPOINTS, PRODUCT_LIST_FIELDS } from '@/api/endpoints';
 
-export const getProducts = async ({ page = 1, pageSize = 20 } = {}) => {
-  const skip = (page - 1) * pageSize;
-
+export const getAllProducts = async () => {
   const response = await api.get(ENDPOINTS.PRODUCTS, {
     params: {
-      limit: pageSize,
-      skip,
+      limit: 0,
+      select: PRODUCT_LIST_FIELDS,
     },
   });
 
+  return response.data;
+};
+
+export const getCategories = async () => {
+  const response = await api.get(ENDPOINTS.CATEGORY_LIST);
   return response.data;
 };
