@@ -1,0 +1,51 @@
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__main {
+    background: #f3f4f6;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__thumbs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  &__thumb {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f3f4f6;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    &.is-active {
+      border-color: #2563eb;
+    }
+
+    &:hover {
+      border-color: #93c5fd;
+    }
+  }
+}
