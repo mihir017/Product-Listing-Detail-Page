@@ -1,0 +1,36 @@
+.default-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: #f3f6f9;
+  color: #132033;
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #d7dee7;
+    background: #fff;
+  }
+
+  &__brand {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  &__tagline {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #5b6b7c;
+  }
+
+  &__main {
+    flex: 1;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+}
