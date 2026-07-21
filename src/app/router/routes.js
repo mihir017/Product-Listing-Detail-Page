@@ -5,8 +5,8 @@ import DefaultLayout from '@/layouts/DefaultLayout';
 const ProductListing = lazy(
   () => import('@/features/products/pages/ProductListing')
 );
-const ProductDetail = lazy(
-  () => import('@/features/products/pages/ProductDetail')
+const ProductDetailPage = lazy(
+  () => import('@/features/products/pages/ProductDetailPage')
 );
 
 export const routes = [
@@ -17,7 +17,7 @@ export const routes = [
   },
   {
     path: ROUTES.PRODUCT_DETAIL,
-    component: ProductDetail,
+    component: ProductDetailPage,
     layout: DefaultLayout,
   },
 ];

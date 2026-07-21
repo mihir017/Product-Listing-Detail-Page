@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import useFilters from '../../hooks/useFilters';
 import { useProductCatalog } from '@/features/products/context/useProductCatalog';
 import CheckboxGroup from '@/shared/components/CheckboxGroup';

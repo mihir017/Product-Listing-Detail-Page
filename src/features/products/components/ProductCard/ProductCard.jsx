@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '@/app/router/routeConstants';
 import './ProductCard.scss';
 
-const ProductCard = ({ product, key }) => {
+const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -12,7 +12,7 @@ const ProductCard = ({ product, key }) => {
   };
 
   return (
-    <article className="product-card" key={key} onClick={handleClick}>
+    <article className="product-card" onClick={handleClick}>
       <div className="product-card__image">
         <img
           src={product.thumbnail}
