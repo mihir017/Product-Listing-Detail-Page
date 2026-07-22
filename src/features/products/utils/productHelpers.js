@@ -17,13 +17,31 @@ export const getUniqueBrands = (products) => {
 
 export const filterProducts = (products, filters = {}) => {
   const {
+    search = '',
     categories = [],
     brands = [],
     minPrice = '',
     maxPrice = '',
   } = filters;
 
+  const normalizedSearch = search.trim().toLowerCase();
+
   return products.filter((product) => {
+    if (normalizedSearch) {
+      const haystack = [
+        product.title,
+        product.brand,
+        product.category,
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+
+      if (!haystack.includes(normalizedSearch)) {
+        return false;
+      }
+    }
+
     if (categories.length > 0 && !categories.includes(product.category)) {
       return false;
     }

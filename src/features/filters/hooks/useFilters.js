@@ -4,6 +4,7 @@ const useFilters = () => {
   const {
     filters,
     errors,
+    setSearch,
     toggleCategory,
     toggleBrand,
     applyPrice,
@@ -16,6 +17,7 @@ const useFilters = () => {
   return {
     filters,
     errors,
+    setSearch,
     toggleCategory,
     toggleBrand,
     applyPrice,

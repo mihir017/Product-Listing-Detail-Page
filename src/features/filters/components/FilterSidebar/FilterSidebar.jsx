@@ -22,6 +22,7 @@ const FilterSidebar = () => {
   } = useProductCatalog();
 
   const hasActiveFilters =
+    filters.search.trim() !== '' ||
     filters.categories.length > 0 ||
     filters.brands.length > 0 ||
     filters.minPrice !== '' ||

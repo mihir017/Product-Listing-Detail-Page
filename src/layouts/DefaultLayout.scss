@@ -8,7 +8,7 @@
 
   &__header {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 1rem;
     padding: 1rem 1.5rem;
@@ -19,12 +19,16 @@
   &__brand {
     font-size: 1.25rem;
     font-weight: 800;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
   }
 
   &__tagline {
     margin: 0;
     font-size: 0.85rem;
     color: #5b6b7c;
+    white-space: nowrap;
   }
 
   &__main {
@@ -32,5 +36,22 @@
     width: -webkit-fill-available;
     margin: 0 auto;
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .default-layout__header {
+    flex-wrap: wrap;
+  }
+
+  .default-layout__tagline {
+    display: none;
+  }
+
+  .search-bar {
+    order: 3;
+    max-width: none;
+    width: 100%;
+    flex-basis: 100%;
   }
 }

@@ -6,6 +6,7 @@ const useProducts = (filters = {}) => {
   const { allProducts, loading, error, refetchCatalog } = useProductCatalog();
 
   const {
+    search = '',
     categories = [],
     brands = [],
     minPrice = '',
@@ -17,12 +18,13 @@ const useProducts = (filters = {}) => {
   const filteredProducts = useMemo(
     () =>
       filterProducts(allProducts, {
+        search,
         categories,
         brands,
         minPrice,
         maxPrice,
       }),
-    [allProducts, categories, brands, minPrice, maxPrice]
+    [allProducts, search, categories, brands, minPrice, maxPrice]
   );
 
   const total = filteredProducts.length;

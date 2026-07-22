@@ -9,6 +9,7 @@ import { validatePrice } from '../utils/validatePrice';
 import { FilterContext } from './filterContextObject';
 
 const DEFAULT_FILTERS = {
+  search: '',
   categories: [],
   brands: [],
   minPrice: '',
@@ -102,6 +103,20 @@ export function FilterProvider({ children }) {
     [applyPrice]
   );
 
+  const setSearch = useCallback((search) => {
+    setFilters((prev) => {
+      if (prev.search === search) {
+        return prev;
+      }
+
+      return {
+        ...prev,
+        search,
+        page: 1,
+      };
+    });
+  }, []);
+
   const setPage = useCallback((page) => {
     setFilters((prev) => ({
       ...prev,
@@ -118,6 +133,7 @@ export function FilterProvider({ children }) {
     () => ({
       filters,
       errors,
+      setSearch,
       toggleCategory,
       toggleBrand,
       applyPrice,
@@ -129,6 +145,7 @@ export function FilterProvider({ children }) {
     [
       filters,
       errors,
+      setSearch,
       toggleCategory,
       toggleBrand,
       applyPrice,
