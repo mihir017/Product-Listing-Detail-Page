@@ -7,8 +7,11 @@ export const PRODUCT_LIST_FIELDS = [
   'id',
   'title',
   'price',
+  'discountPercentage',
   'rating',
   'thumbnail',
   'category',
   'brand',
+  'stock',
+  'reviews',
 ].join(',');

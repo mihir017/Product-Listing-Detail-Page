@@ -1,0 +1,45 @@
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  &__stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 1px;
+  }
+
+  &__star {
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  &__star-empty,
+  &__star-filled {
+    display: block;
+  }
+
+  &__star-empty {
+    color: #d1d5db;
+  }
+
+  &__star-filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #f6aa1c;
+  }
+
+  &__value,
+  &__count {
+    font-size: 13px;
+    color: #9ca3af;
+    font-weight: 400;
+  }
+}

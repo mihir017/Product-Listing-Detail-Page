@@ -1,42 +1,222 @@
 .product-detail {
-  display: grid;
-  grid-template-columns: minmax(240px, 400px) 1fr;
-  gap: 40px;
-  align-items: start;
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr minmax(280px, 42%);
+    gap: 48px;
+    align-items: start;
+  }
 
-  &__content {
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(1.5rem, 2vw, 2rem);
-      line-height: 1.2;
-    }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
 
-    h2 {
-      margin: 0 0 12px;
-      font-size: 1.5rem;
-    }
+  &__breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #9ca3af;
 
-    p {
-      margin: 0 0 10px;
+    a {
+      color: #9ca3af;
+      text-decoration: none;
+
+      &:hover {
+        color: #111827;
+      }
     }
   }
 
-  &__category {
-    color: #6b7280;
-    margin-bottom: 20px;
+  &__breadcrumb-item {
     text-transform: capitalize;
   }
 
-  &__description {
-    margin: 20px 0;
-    line-height: 1.7;
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__tag {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #e1e1e1;
     color: #374151;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #111827;
+  }
+
+  &__summary {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #6b7280;
+  }
+
+  &__rating-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__rating-meta {
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  &__price-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  &__price-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  &__price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  &__price-original {
+    font-size: 1rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+  }
+
+  &__discount {
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  &__payment-note {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  &__divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 6px 0;
+  }
+
+  &__specs {
+    display: grid;
+    gap: 6px;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  }
+
+  &__description-block {
+    h2 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4b5563;
+    }
+  }
+
+  &__cart-btn {
+    width: 100%;
+    margin-top: 8px;
+    border: none;
+    border-radius: 999px;
+    padding: 14px 20px;
+    background: #111827;
+    color: #fff;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background: #000;
+    }
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  &__feature-icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  &__feature-title {
+    margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  &__feature-text {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.45;
+    color: #6b7280;
   }
 }
 
-@media (max-width: 800px) {
-  .product-detail {
+@media (max-width: 900px) {
+  .product-detail__layout {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
 }

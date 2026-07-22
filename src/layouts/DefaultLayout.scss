@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   background: #f3f6f9;
   color: #132033;
 
@@ -24,11 +24,30 @@
     white-space: nowrap;
   }
 
-  &__tagline {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #5b6b7c;
-    white-space: nowrap;
+  &__cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    color: #132033;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+      background: #f8fafc;
+    }
+  }
+
+  &__cart-icon {
+    width: 22px;
+    height: 22px;
   }
 
   &__main {
@@ -42,10 +61,6 @@
 @media (max-width: 720px) {
   .default-layout__header {
     flex-wrap: wrap;
-  }
-
-  .default-layout__tagline {
-    display: none;
   }
 
   .search-bar {
